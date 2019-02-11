@@ -1,0 +1,30 @@
+<div class="row text-center" >
+  <div class="col">
+    <h1>Hallo {{wsService.userName}} </h1>
+  </div>
+</div>
+<div class="row text-center" >
+  <div class="col">
+    <h3>Suche dir einen Kaffee aus</h3>
+  </div>
+</div>
+<div class="row" >
+  <div class="col">
+    <div class="card" [ngClass]="{'animated pulse ' : coffeeTap}" (click)="tapCoffeeButton()">
+      <img src="../../../assets/pexels-photo-130865.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Café Crema, Espresso</h5>
+        <p class="card-text">0,20€ / Kaffee</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" [ngClass]="{'animated pulse ' : coffeeMilkTap}" (click)="tapCoffeeMilkButton()">
+      <img src="../../../assets/pexels-photo-414720.jpeg"  class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cappuccino, Latte Macchiato, Flat White</h5>
+        <p class="card-text">0,30€ / Kaffee</p>
+      </div>
+    </div>
+  </div>
+</div>
