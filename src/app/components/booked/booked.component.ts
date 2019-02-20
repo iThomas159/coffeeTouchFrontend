@@ -18,10 +18,6 @@ export class BookedComponent implements OnInit {
     this.bookedOK = false;
 
 
-    this.wsService.amountObs.subscribe(val => {
-      this.amount = val;
-      setTimeout(() => { this.bookedOK = true; }, 3000);
-      setTimeout(() => { this.amount = null;  this.router.navigate(['/start']); }, 4000);
-    });
+
   }
 }

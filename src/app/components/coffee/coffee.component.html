@@ -13,7 +13,7 @@
     <div class="card" [ngClass]="{'animated pulse ' : coffeeTap}" (click)="tapCoffeeButton()">
       <img src="../../../assets/pexels-photo-130865.jpeg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Café Crema, Espresso</h5>
+        <h5 class="card-title">schwarzer Kaffee</h5>
         <p class="card-text">0,20€ / Kaffee</p>
       </div>
     </div>
@@ -22,8 +22,17 @@
     <div class="card" [ngClass]="{'animated pulse ' : coffeeMilkTap}" (click)="tapCoffeeMilkButton()">
       <img src="../../../assets/pexels-photo-414720.jpeg"  class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Cappuccino, Latte Macchiato, Flat White</h5>
+        <h5 class="card-title">Kaffee mit Milch</h5>
         <p class="card-text">0,30€ / Kaffee</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" [ngClass]="{'animated pulse ' : milkTap}" (click)="tapMilkButton()">
+      <img src="../../../assets/pexels-photo-1484553.jpg"  class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">nur Milch</h5>
+        <p class="card-text">0,10€ / Getränk</p>
       </div>
     </div>
   </div>

@@ -20,7 +20,7 @@ export class WsService {
 
   public userName;
   public userID;
-  public amount = "0";
+  public amount = null;
 
 
   public amountObs = new Subject<string>();
@@ -28,7 +28,7 @@ export class WsService {
   constructor(private router: Router) {
     this.input = new QueueingSubject<any>();
 
-    this.connection = websocketConnect('ws://10.0.1.7:8080/coffeetouch/ws', this.input);
+    this.connection = websocketConnect('ws://10.0.1.13:8080/ws', this.input);
 
     this.connectionStatusSubscription = this.connection.connectionStatus.subscribe(numberConnected => {
       console.log('number of connected websockets:', numberConnected);
@@ -39,6 +39,11 @@ export class WsService {
     ).subscribe(message => {
       this.decodeMessage(message);
     });
+    this.amountObs.subscribe(val => {
+      console.log('value, ', this.amount);
+      setTimeout(() => { this.amount = null;  this.router.navigate(['/start']); }, 5000);
+    });
+
   }
 
   getMessages() {
@@ -57,14 +62,18 @@ export class WsService {
     const message = JSON.parse(msg);
 
     if (message.messageType === 'CARD') {
+      console.log('IS CARD');
       this.userID = message.messageBody[0];
       this.userName = message.messageBody[1];
       this.router.navigate(['/coffee']);
 
     } else if (message.messageType === 'AMOUNT') {
+      console.log('IS AMOUNT');
       this.amount = message.messageBody;
       this.amountObs.next(this.amount);
       this.router.navigate(['/booked']);
     }
   }
+
+
 }

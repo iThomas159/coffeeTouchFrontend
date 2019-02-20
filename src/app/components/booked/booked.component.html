@@ -5,14 +5,14 @@
 </div>
 <div class="row text-center animated fadeIn" >
   <div class="col">
-    <div class="circle-loader" [ngClass]="{'load-complete' : amount}">
-      <div class="checkmark draw" [ngClass]="{'show-checkmark ' : amount}"></div>
+    <div class="circle-loader" [ngClass]="{'load-complete' : wsService.amount}">
+      <div class="checkmark draw" [ngClass]="{'show-checkmark ' : wsService.amount}"></div>
     </div>
   </div>
 </div>
 <div class="row text-center" >
   <div class="col">
-    <h1  class="hidden" [ngClass]="{'animated fadeIn show ' : amount, 'hidden' : !amount}">Auf deiner Karte sind noch {{amount}}€</h1>
+    <h1  class="hidden" [ngClass]="{'animated fadeIn show ' : wsService.amount, 'hidden' : !wsService.amount}">Auf deiner Karte sind noch {{wsService.amount}}€</h1>
   </div>
 </div>
 

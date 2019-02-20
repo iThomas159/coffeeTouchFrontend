@@ -12,6 +12,7 @@ export class CoffeeComponent implements OnInit {
 
   coffeeTap;
   coffeeMilkTap;
+  milkTap;
   audio;
   constructor(public wsService: WsService, private router: Router) { }
 
@@ -19,6 +20,7 @@ export class CoffeeComponent implements OnInit {
 
     this.coffeeTap = false;
     this.coffeeMilkTap = false;
+    this.milkTap = false;
     this.audio = new Audio("../../assets/button.mp3");
   }
 
@@ -38,6 +40,16 @@ export class CoffeeComponent implements OnInit {
     navigator.vibrate([200]);
     this.audio.play();
     this.wsService.sendMessage({'messageType': 'COFFEE_TYP', 'messageBody': this.wsService.userID + ';COFFEE_WITH_MILK'});
+
+    setTimeout(() => { this.router.navigate(['/booked']); }, 2000);
+  }
+
+  tapMilkButton() {
+    this.milkTap = true;
+    setTimeout(() => {this.milkTap = false; }, 1000);
+    navigator.vibrate([200]);
+    this.audio.play();
+    this.wsService.sendMessage({'messageType': 'COFFEE_TYP', 'messageBody': this.wsService.userID + ';ONLY_MILK'});
 
     setTimeout(() => { this.router.navigate(['/booked']); }, 2000);
   }
