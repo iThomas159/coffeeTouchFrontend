@@ -1,6 +1,6 @@
 {
-  "short_name": "Kinlan's Amaze App",
-  "name": "Kinlan's Amazing Application ++",
+  "short_name": "CoffeeTouch",
+  "name": "CoffeeTouch",
   "start_url": "/index.html",
   "display": "standalone",
   "orientation": "landscape"

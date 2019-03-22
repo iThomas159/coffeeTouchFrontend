@@ -1,0 +1,44 @@
+
+h1 {
+
+  font-family: Arial;
+}
+div.pinfield {
+  h1 {
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 110px;
+    font-size: 50px;
+
+    color: whitesmoke;
+    background-color: rgba(255, 254, 255, 0.1);
+  }
+
+  &:first-child {
+    padding-top:20px;
+  }
+
+  padding-top: 20px;
+
+}
+
+.pinnumber {
+  padding-top: 20px;
+  h1 {
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 110px;
+    color: whitesmoke;
+
+  }
+}
+
+.show {
+  display: flex;
+}
+
+.notshow {
+  display: none;
+}
+
+.noUser {
+
+}

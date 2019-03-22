@@ -28,7 +28,7 @@ export class WsService {
   constructor(private router: Router) {
     this.input = new QueueingSubject<any>();
 
-    this.connection = websocketConnect('ws://10.0.1.13:8080/ws', this.input);
+    this.connection = websocketConnect('ws://10.90.43.22:8080/coffeemakerProgram/ws', this.input);
 
     this.connectionStatusSubscription = this.connection.connectionStatus.subscribe(numberConnected => {
       console.log('number of connected websockets:', numberConnected);

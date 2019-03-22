@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="z-index: 99999">
   <a class="navbar-brand" [routerLink]="['/start']">Starbugs Coffee-Touch</a>
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -7,12 +7,12 @@
         <a class="nav-link" [routerLink]="['/coffee']">Kaffeeauswahl<span class="sr-only">(current)</span></a>
       </li>
     </ul>
-    <div ngbDropdown placement="bottom-right">
+   <!-- <div ngbDropdown placement="bottom-right">
       <button class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle><i class="fas fa-user"></i> </button>
       <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBasic1">
         <button class="dropdown-item">Anmelden</button>
       </div>
-    </div>
+    </div> -->
   </div>
 </nav>
 
